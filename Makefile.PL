@@ -7,6 +7,9 @@ all_from 'lib/Archive/RPM.pm';
 author   'Chris Weyl <cweyl@alumni.drew.edu>';
 license  'lgpl';
 
+readme_from 'lib/Archive/RPM.pm';
+readme_markdown_from 'lib/Archive/RPM.pm';
+
 requires 'namespace::clean';
 
 requires 'Moose';
