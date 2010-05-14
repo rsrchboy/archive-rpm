@@ -1,5 +1,5 @@
 NAME
-    Archive::RPM - work with an RPM
+    Archive::RPM - Work with a RPM
 
 SYNOPSIS
             use Archive::RPM;
@@ -15,7 +15,17 @@ DESCRIPTION
     can, and by "exploding" the rpm (with rpm2cpio and cpio) when we need
     information we can't get through RPM2.
 
-SUBROUTINES/METHODS
+TRAITS
+    This package allows for the application of various "TraitFor" style
+    traits through the with_traits() function, e.g.:
+
+        Archive::RPM->with_traits('Foo')->new(...);
+
+    By default, we look for traits in the "Archive::RPM::TraitsFor"
+    namespace, though this can be overridden by prepending a "+" to the full
+    package name of the trait.
+
+METHODS
     An object of this class represents an actual RPM, somewhere on the
     filesystem. We provide all the methods RPM2::Header does, as well as
     additional functions to manipulate/extract the rpm itself (but not to
@@ -103,15 +113,8 @@ DIAGNOSTICS
 SEE ALSO
     RPM2
 
-    This package is part of the Fedora Project's Perl SIG work. For more
-    information, see:
-
-        http://fedoraproject.org
-        http://fedoraproject.org/wiki/Perl
-        http://camelus.fedorahosted.org
-
 LIMITATIONS
-    Our documentation is clearly lacking, sadly.
+    Our documentation and test suite is clearly lacking, sadly.
 
     We also have to explode the rpm for anything more intense than simply
     looking at the header for info. While this isn't really a _horrible_
@@ -135,7 +138,7 @@ AUTHOR
     Chris Weyl <cweyl@alumni.drew.edu>
 
 LICENSE AND COPYRIGHT
-    Copyright (c) 2009 Chris Weyl <cweyl@alumni.drew.edu>
+    Copyright (c) 2009, 2010 Chris Weyl <cweyl@alumni.drew.edu>
 
     This library is free software; you can redistribute it and/or modify it
     under the terms of the GNU Lesser General Public License as published by
